@@ -1,8 +1,11 @@
-class MyError < RuntimeError
+module MyMethods
+  def foo
+    'bar'
+  end
 end
 
-begin
-  raise MyError
-rescue => ex
-  p ex
+class MyClass
+  include MyMethods
 end
+
+p MyClass.new.foo
